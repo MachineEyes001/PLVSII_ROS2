@@ -1,0 +1,2 @@
+# Windows X Server 配置（需要先安装并启动 VcXsrv，才能正常打开rviz2）
+docker run -it --gpus all --name ubuntu_ros2 --privileged=true --net=host --env "UID=${UID:-1000}" --env "NVIDIA_DRIVER_CAPABILITIES=all" --env "NVIDIA_VISIBLE_DEVICES=all" --env "DISPLAY=host.docker.internal:0.0" --env "QT_X11_NO_MITSHM=1" --volume "/etc/localtime:/etc/localtime:ro" --volume "/tmp/.X11-unix:/tmp/.X11-unix:rw" --volume "G:\3DREC:/home/luodong/3DREC" --workdir "/mnt/host/e/docker/project" ubuntu:ros2 /bin/bash
